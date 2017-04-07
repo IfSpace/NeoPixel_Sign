@@ -48,6 +48,36 @@ void loop() {
   //theaterChaseRainbow(50);
 }
 
+void StarBlink(int StartPixel, int EndPixel, int Delay, int FunctionBrightness){
+  int brightness = 0;
+// For a set of NeoPixels the first NeoPixel is 0, second is 1, all the way up to the count of pixels minus one.
+for (int j=0;j<FunctionBrightness;j++){
+for(int i=StartPixel;i<EndPixel;i++){
+
+  // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
+  pixels.setPixelColor(i, pixels.Color(brightness,brightness,brightness));
+
+
+}
+delay(Delay); // Delay for a period of time (in milliseconds).
+brightness++;
+pixels.show();
+}
+for (int j=FunctionBrightness;j>0;j--){
+for(int i=StartPixel;i<EndPixel;i++){
+
+  // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
+  pixels.setPixelColor(i, pixels.Color(brightness,brightness,brightness));
+
+
+}
+delay(Delay); // Delay for a period of time (in milliseconds).
+brightness--;
+pixels.show();
+}
+}
+
+
 // Fill the dots one after the other with a color
 void colorWipe(uint32_t c, uint8_t wait) {
   for(uint16_t i=22; i<strip.numPixels(); i++) {
