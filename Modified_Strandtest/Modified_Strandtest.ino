@@ -42,6 +42,8 @@ void loop() {
   //theaterChase(strip.Color(127, 127, 127), 50); // White
   //theaterChase(strip.Color(127, 0, 0), 50); // Red
   //theaterChase(strip.Color(0, 0, 127), 50); // Blue
+  StarBlink(28, 50, 10, 255);
+  StarBlink(28, 50, 10, 255);
 
   rainbow(500);
   //rainbowCycle(20);
