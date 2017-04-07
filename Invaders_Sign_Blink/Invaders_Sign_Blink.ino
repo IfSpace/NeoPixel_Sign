@@ -30,13 +30,43 @@ void setup() {
   pixels.begin(); // This initializes the NeoPixel library.
 }
 
+void StarBlink(int StartPixel, int EndPixel, int Delay, int FunctionBrightness){
+  int brightness = 0;
+// For a set of NeoPixels the first NeoPixel is 0, second is 1, all the way up to the count of pixels minus one.
+for (int j=0;j<FunctionBrightness;j++){
+for(int i=StartPixel;i<EndPixel;i++){
+
+  // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
+  pixels.setPixelColor(i, pixels.Color(brightness,brightness,brightness));
+
+
+}
+delay(delayval); // Delay for a period of time (in milliseconds).
+brightness++;
+pixels.show();
+}
+for (int j=FunctionBrightness;j>0;j--){
+for(int i=StartPixel;i<EndPixel;i++){
+
+  // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
+  pixels.setPixelColor(i, pixels.Color(brightness,brightness,brightness));
+
+
+}
+delay(delayval); // Delay for a period of time (in milliseconds).
+brightness--;
+pixels.show();
+}
+}
+
+
 void loop() {
 
   // For a set of NeoPixels the first NeoPixel is 0, second is 1, all the way up to the count of pixels minus one.
 
-  
 
-  
+
+
 
   for(int i=22;i<NUMPIXELS;i++){
 
@@ -47,7 +77,7 @@ void loop() {
     pixels.show(); // This sends the updated pixel color to the hardware.
     delay(100);
   }
-  
+
   //delay(500);
   for(int i=22;i<NUMPIXELS;i++){
 
@@ -58,9 +88,11 @@ void loop() {
     pixels.show();
     delay(100);
   }
-  
-  
 
-  
-  
+
+
+
+
+
+
 }

@@ -34,7 +34,7 @@ void setup() {
 
 void StarBlip(int startPixel, int endPixel, int speed){
 
-int brightnessDestination = random(0, 255);
+int brightnessDestination = random(0, 50);
 
 
   for (int brightness=0; brightness<=brightnessDestination;++brightness)
