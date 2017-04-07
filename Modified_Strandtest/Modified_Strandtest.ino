@@ -34,16 +34,16 @@ void setup() {
 
 void loop() {
   // Some example procedures showing how to display to the pixels:
-  colorWipe(strip.Color(255, 0, 0), 10); // Red
-  colorWipe(strip.Color(0, 255, 0), 10); // Green
-  colorWipe(strip.Color(0, 0, 255), 10); // Blue
-  colorWipe(strip.Color(255, 255, 255), 10); // White RGBW
+  colorWipe(strip.Color(255, 0, 0), 30); // Red
+  colorWipe(strip.Color(0, 255, 0), 30); // Green
+  colorWipe(strip.Color(0, 0, 255), 30); // Blue
+  colorWipe(strip.Color(255, 255, 255), 30); // White RGBW
   // Send a theater pixel chase in...
   //theaterChase(strip.Color(127, 127, 127), 50); // White
   //theaterChase(strip.Color(127, 0, 0), 50); // Red
   //theaterChase(strip.Color(0, 0, 127), 50); // Blue
 
-  //rainbow(5);
+  rainbow(500);
   //rainbowCycle(20);
   //theaterChaseRainbow(50);
 }
