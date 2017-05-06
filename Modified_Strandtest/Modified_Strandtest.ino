@@ -13,7 +13,7 @@
 //   NEO_GRB     Pixels are wired for GRB bitstream (most NeoPixel products)
 //   NEO_RGB     Pixels are wired for RGB bitstream (v1 FLORA pixels, not v2)
 //   NEO_RGBW    Pixels are wired for RGBW bitstream (NeoPixel RGBW products)
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(50, PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(100, PIN, NEO_GRB + NEO_KHZ800);
 
 // IMPORTANT: To reduce NeoPixel burnout risk, add 1000 uF capacitor across
 // pixel power leads, add 300 - 500 Ohm resistor on first pixel's data input
@@ -42,8 +42,8 @@ void loop() {
   //theaterChase(strip.Color(127, 127, 127), 50); // White
   //theaterChase(strip.Color(127, 0, 0), 50); // Red
   //theaterChase(strip.Color(0, 0, 127), 50); // Blue
-  StarBlink(28, 50, 10, 255);
-  StarBlink(28, 50, 10, 255);
+  //StarBlink(28, 50, 10, 255);
+  //StarBlink(28, 50, 10, 255);
 
   rainbow(500);
   //rainbowCycle(20);
@@ -57,25 +57,25 @@ for (int j=0;j<FunctionBrightness;j++){
 for(int i=StartPixel;i<EndPixel;i++){
 
   // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-  pixels.setPixelColor(i, pixels.Color(brightness,brightness,brightness));
+  strip.setPixelColor(i, strip.Color(brightness,brightness,brightness));
 
 
 }
 delay(Delay); // Delay for a period of time (in milliseconds).
 brightness++;
-pixels.show();
+strip.show();
 }
 for (int j=FunctionBrightness;j>0;j--){
 for(int i=StartPixel;i<EndPixel;i++){
 
   // pixels.Color takes RGB values, from 0,0,0 up to 255,255,255
-  pixels.setPixelColor(i, pixels.Color(brightness,brightness,brightness));
+  strip.setPixelColor(i, strip.Color(brightness,brightness,brightness));
 
 
 }
 delay(Delay); // Delay for a period of time (in milliseconds).
 brightness--;
-pixels.show();
+strip.show();
 }
 }
 
